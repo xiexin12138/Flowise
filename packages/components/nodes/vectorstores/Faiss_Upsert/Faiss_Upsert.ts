@@ -40,7 +40,7 @@ class FaissUpsert_VectorStores implements INode {
                 label: 'Base Path to store',
                 name: 'basePath',
                 description: 'Path to store faiss.index file',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                placeholder: `~/temp`,
                 type: 'string'
             },
             {

@@ -13,7 +13,8 @@ const dashboard = {
     children: [
         {
             id: 'chatflows',
-            title: 'Chatflows',
+            title: 'AI 服务编排',
+            // title: 'Chatflows',
             type: 'item',
             url: '/chatflows',
             icon: icons.IconHierarchy,
@@ -21,7 +22,8 @@ const dashboard = {
         },
         {
             id: 'marketplaces',
-            title: 'Marketplaces',
+            title: 'AI 应用市场',
+            // title: 'Marketplaces',
             type: 'item',
             url: '/marketplaces',
             icon: icons.IconBuildingStore,
@@ -29,7 +31,8 @@ const dashboard = {
         },
         {
             id: 'apikey',
-            title: 'API Keys',
+            title: 'API 密钥',
+            // title: 'API Keys',
             type: 'item',
             url: '/apikey',
             icon: icons.IconKey,

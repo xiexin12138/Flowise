@@ -145,7 +145,8 @@ const embedCodeCustomization = (chatflowid) => {
                 customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
             },
             chatWindow: {
-                welcomeMessage: "Hello! This is custom welcome message",
+                welcomeMessage: "你好！这是自定义的欢迎信息",
+                // welcomeMessage: "Hello! This is custom welcome message",
                 backgroundColor: "#ffffff",
                 height: 700,
                 width: 400,
@@ -163,7 +164,8 @@ const embedCodeCustomization = (chatflowid) => {
                     avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
                 },
                 textInput: {
-                    placeholder: "Type your question",
+                    placeholder: "输入你的问题",
+                    // placeholder: "Type your question",
                     backgroundColor: "#ffffff",
                     textColor: "#303235",
                     sendButtonColor: "#3B81F6",
@@ -178,7 +180,8 @@ const APICodeDialog = ({ show, dialogProps, onCancel }) => {
     const portalElement = document.getElementById('portal')
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const codes = ['Embed', 'Python', 'JavaScript', 'cURL']
+    const codes = ['Json', 'Embed', 'Python', 'JavaScript', 'cURL']
+    // const codes = ['Embed', 'Python', 'JavaScript', 'cURL']
     const [value, setValue] = useState(0)
     const [keyOptions, setKeyOptions] = useState([])
     const [apiKeys, setAPIKeys] = useState([])
@@ -262,6 +265,9 @@ query({"question": "Hey, how are you?"}).then((response) => {
      -d '{"question": "Hey, how are you?"}'`
         } else if (codeLang === 'Embed') {
             return embedCode(dialogProps.chatflowid)
+        } else if (codeLang === 'Json') {
+            var result = { name: dialogProps.flowName, url: baseURL + '/api/v1/prediction/' + dialogProps.chatflowid, method: 'POST' }
+            return JSON.stringify(result)
         }
         return ''
     }
@@ -330,6 +336,8 @@ query({"question": "Hey, how are you?"}).then((response) => {
             return EmbedSVG
         } else if (codeLang === 'cURL') {
             return cURLSVG
+        } else if (codeLang === 'Json') {
+            return javascriptSVG
         }
         return pythonSVG
     }
@@ -526,7 +534,8 @@ query({
         if (getAllAPIKeysApi.data) {
             const options = [
                 {
-                    label: 'No Authorization',
+                    label: '无需授权',
+                    // label: 'No Authorization',
                     name: ''
                 }
             ]
@@ -537,7 +546,8 @@ query({
                 })
             }
             options.push({
-                label: '- Add New Key -',
+                label: '- 添加新密钥 -',
+                // label: '- Add New Key -',
                 name: 'addnewkey'
             })
             setKeyOptions(options)
@@ -594,7 +604,7 @@ query({
                                 disableClearable={true}
                                 options={keyOptions}
                                 onSelect={(newValue) => onApiKeySelected(newValue)}
-                                value={dialogProps.chatflowApiKeyId ?? chatflowApiKeyId ?? 'Choose an API key'}
+                                value={dialogProps.chatflowApiKeyId ?? chatflowApiKeyId ?? '选择一个 API 密钥'}
                             />
                         </div>
                     )}
@@ -602,11 +612,12 @@ query({
                 <div style={{ marginTop: 10 }}></div>
                 {codes.map((codeLang, index) => (
                     <TabPanel key={index} value={value} index={index}>
-                        {value === 0 && (
+                        {value === 1 && (
                             <>
                                 <span>
-                                    Paste this anywhere in the <code>{`<body>`}</code> tag of your html file.
-                                    <p>
+                                    将此代码粘贴到你的HTML文件的 <code>{`<body>`}</code> 标签中的任何位置。
+                                    {/* Paste this anywhere in the <code>{`<body>`}</code> tag of your html file. */}
+                                    {/* <p>
                                         You can also specify a&nbsp;
                                         <a
                                             rel='noreferrer'
@@ -616,7 +627,7 @@ query({
                                             version
                                         </a>
                                         :&nbsp;<code>{`https://cdn.jsdelivr.net/npm/flowise-embed@<version>/dist/web.js`}</code>
-                                    </p>
+                                    </p> */}
                                 </span>
                                 <div style={{ height: 10 }}></div>
                             </>
@@ -628,8 +639,9 @@ query({
                             showLineNumbers={false}
                             wrapLines
                         />
-                        {value !== 0 && <CheckboxInput label='Show Input Config' value={checkboxVal} onChange={onCheckBoxChanged} />}
-                        {value !== 0 && checkboxVal && getConfigApi.data && getConfigApi.data.length > 0 && (
+                        {value > 1 && <CheckboxInput label='显示输入设置' value={checkboxVal} onChange={onCheckBoxChanged} />}
+                        {/* {value !== 0 && <CheckboxInput label='Show Input Config' value={checkboxVal} onChange={onCheckBoxChanged} />} */}
+                        {value > 1 && checkboxVal && getConfigApi.data && getConfigApi.data.length > 0 && (
                             <>
                                 <TableViewOnly rows={getConfigApi.data} columns={Object.keys(getConfigApi.data[0])} />
                                 <CopyBlock
@@ -651,7 +663,8 @@ query({
                         )}
                         {value === 0 && (
                             <CheckboxInput
-                                label='Show Embed Chat Config'
+                                label='现实嵌入聊天设置'
+                                // label='Show Embed Chat Config'
                                 value={embedChatCheckboxVal}
                                 onChange={onCheckBoxEmbedChatChanged}
                             />

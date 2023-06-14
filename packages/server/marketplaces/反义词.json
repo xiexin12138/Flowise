@@ -1,5 +1,5 @@
 {
-    "description": "Output antonym of given user input using few-shot prompt template built with examples",
+    "description": "使用通过示例构建的少数镜头提示模板输出给定用户输入的反义词",
     "nodes": [
         {
             "width": 300,
@@ -182,13 +182,13 @@
                 "description": "Wrapper around OpenAI large language models",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "openAI_1-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -365,7 +365,7 @@
                 "outputAnchors": [
                     {
                         "name": "output",
-                        "label": "Output",
+                        "label": "输出",
                         "type": "options",
                         "options": [
                             {

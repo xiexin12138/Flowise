@@ -28,7 +28,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [

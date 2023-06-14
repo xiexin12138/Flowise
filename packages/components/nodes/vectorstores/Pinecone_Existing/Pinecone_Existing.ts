@@ -16,7 +16,7 @@ class Pinecone_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Pinecone Load Existing Index'
+        this.label = 'Pinecone 加载现有索引'
         this.name = 'pineconeExistingIndex'
         this.type = 'Pinecone'
         this.icon = 'pinecone.png'

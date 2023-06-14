@@ -63,7 +63,8 @@ export const File = ({ value, fileType, onChange, disabled = false }) => {
                     marginBottom: '1rem'
                 }}
             >
-                {myValue ? getFileName(myValue) : 'Choose a file to upload'}
+                {myValue ? getFileName(myValue) : '选择上传的文件'}
+                {/* {myValue ? getFileName(myValue) : 'Choose a file to upload'} */}
             </span>
             <Button
                 disabled={disabled}
@@ -73,7 +74,8 @@ export const File = ({ value, fileType, onChange, disabled = false }) => {
                 startIcon={<IconUpload />}
                 sx={{ marginRight: '1rem' }}
             >
-                {'Upload File'}
+                {'上传文件'}
+                {/* {'Upload File'} */}
                 <input type='file' multiple accept={fileType} hidden onChange={(e) => handleFileUpload(e)} />
             </Button>
         </FormControl>

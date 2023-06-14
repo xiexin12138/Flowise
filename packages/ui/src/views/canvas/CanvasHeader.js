@@ -104,8 +104,10 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
         }
 
         setAPIDialogProps({
-            title: 'Embed in website or use as API',
+            title: '在网页内嵌入或作为 API 使用',
+            // title: 'Embed in website or use as API',
             chatflowid: chatflow.id,
+            flowName,
             chatflowApiKeyId: chatflow.apikeyid,
             isFormDataRequired
         })
@@ -140,7 +142,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
     return (
         <>
             <Box>
-                <ButtonBase title='Back' sx={{ borderRadius: '50%' }}>
+                <ButtonBase title='返回' sx={{ borderRadius: '50%' }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -176,7 +178,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                             {canvas.isDirty && <strong style={{ color: theme.palette.orange.main }}>*</strong>} {flowName}
                         </Typography>
                         {chatflow?.id && (
-                            <ButtonBase title='Edit Name' sx={{ borderRadius: '50%' }}>
+                            <ButtonBase title='编辑名称' sx={{ borderRadius: '50%' }}>
                                 <Avatar
                                     variant='rounded'
                                     sx={{
@@ -211,7 +213,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                             }}
                             defaultValue={flowName}
                         />
-                        <ButtonBase title='Save Name' sx={{ borderRadius: '50%' }}>
+                        <ButtonBase title='保存名称' sx={{ borderRadius: '50%' }}>
                             <Avatar
                                 variant='rounded'
                                 sx={{
@@ -232,7 +234,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                                 <IconCheck stroke={1.5} size='1.3rem' />
                             </Avatar>
                         </ButtonBase>
-                        <ButtonBase title='Cancel' sx={{ borderRadius: '50%' }}>
+                        <ButtonBase title='取消' sx={{ borderRadius: '50%' }}>
                             <Avatar
                                 variant='rounded'
                                 sx={{
@@ -258,7 +260,8 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
             </Box>
             <Box>
                 {chatflow?.id && (
-                    <ButtonBase title='API Endpoint' sx={{ borderRadius: '50%', mr: 2 }}>
+                    <ButtonBase title='API 端点' sx={{ borderRadius: '50%', mr: 2 }}>
+                        {/* <ButtonBase title='API Endpoint' sx={{ borderRadius: '50%', mr: 2 }}> */}
                         <Avatar
                             variant='rounded'
                             sx={{
@@ -279,7 +282,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                         </Avatar>
                     </ButtonBase>
                 )}
-                <ButtonBase title='Save Chatflow' sx={{ borderRadius: '50%', mr: 2 }}>
+                <ButtonBase title='保存服务编排' sx={{ borderRadius: '50%', mr: 2 }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -299,7 +302,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                         <IconDeviceFloppy stroke={1.5} size='1.3rem' />
                     </Avatar>
                 </ButtonBase>
-                <ButtonBase ref={settingsRef} title='Settings' sx={{ borderRadius: '50%' }}>
+                <ButtonBase ref={settingsRef} title='设置' sx={{ borderRadius: '50%' }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -330,9 +333,11 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
             <SaveChatflowDialog
                 show={flowDialogOpen}
                 dialogProps={{
-                    title: `Save New Chatflow`,
-                    confirmButtonName: 'Save',
-                    cancelButtonName: 'Cancel'
+                    title: `保存新的服务编排`,
+                    // title: `Save New Chatflow`,
+                    confirmButtonName: '保存',
+                    // confirmButtonName: 'Save',
+                    cancelButtonName: '取消' // cancelButtonName: 'Cancel'
                 }}
                 onCancel={() => setFlowDialogOpen(false)}
                 onConfirm={onConfirmSaveName}

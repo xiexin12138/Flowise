@@ -21,7 +21,7 @@ class Serper_Tools implements INode {
         this.description = 'Wrapper around Serper.dev - Google Search API'
         this.inputs = [
             {
-                label: 'Serper Api Key',
+                label: 'Serper接口密钥',
                 name: 'apiKey',
                 type: 'password'
             }

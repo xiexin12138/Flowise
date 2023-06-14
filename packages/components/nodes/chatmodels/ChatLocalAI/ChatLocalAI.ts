@@ -29,7 +29,7 @@ class ChatLocalAI_ChatModels implements INode {
                 placeholder: 'http://localhost:8080/v1'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'string',
                 placeholder: 'gpt4all-lora-quantized.bin'

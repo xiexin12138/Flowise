@@ -1,96 +1,13 @@
 {
-    "description": "An agent that uses the React Framework to decide what action to take",
+    "description": "具有提示模板和LLM模型的无状态（无缓存）大语言链的基本示例",
     "nodes": [
         {
             "width": 300,
-            "height": 278,
-            "id": "serpAPI_1",
-            "position": {
-                "x": 312.0655985817535,
-                "y": 112.09909989842703
-            },
-            "type": "customNode",
-            "data": {
-                "id": "serpAPI_1",
-                "label": "Serp API",
-                "name": "serpAPI",
-                "type": "SerpAPI",
-                "baseClasses": ["SerpAPI", "Tool", "StructuredTool", "BaseLangChain"],
-                "category": "Tools",
-                "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
-                "inputParams": [
-                    {
-                        "label": "Serp Api Key",
-                        "name": "apiKey",
-                        "type": "password",
-                        "id": "serpAPI_1-input-apiKey-password"
-                    }
-                ],
-                "inputAnchors": [],
-                "inputs": {},
-                "outputAnchors": [
-                    {
-                        "id": "serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain",
-                        "name": "serpAPI",
-                        "label": "SerpAPI",
-                        "type": "SerpAPI | Tool | StructuredTool | BaseLangChain"
-                    }
-                ],
-                "outputs": {},
-                "selected": false
-            },
-            "selected": false,
-            "positionAbsolute": {
-                "x": 312.0655985817535,
-                "y": 112.09909989842703
-            },
-            "dragging": false
-        },
-        {
-            "width": 300,
-            "height": 143,
-            "id": "calculator_1",
-            "position": {
-                "x": 664.1366474718458,
-                "y": 123.16419000640141
-            },
-            "type": "customNode",
-            "data": {
-                "id": "calculator_1",
-                "label": "Calculator",
-                "name": "calculator",
-                "type": "Calculator",
-                "baseClasses": ["Calculator", "Tool", "StructuredTool", "BaseLangChain"],
-                "category": "Tools",
-                "description": "Perform calculations on response",
-                "inputParams": [],
-                "inputAnchors": [],
-                "inputs": {},
-                "outputAnchors": [
-                    {
-                        "id": "calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain",
-                        "name": "calculator",
-                        "label": "Calculator",
-                        "type": "Calculator | Tool | StructuredTool | BaseLangChain"
-                    }
-                ],
-                "outputs": {},
-                "selected": false
-            },
-            "positionAbsolute": {
-                "x": 664.1366474718458,
-                "y": 123.16419000640141
-            },
-            "selected": false,
-            "dragging": false
-        },
-        {
-            "width": 300,
-            "height": 524,
+            "height": 526,
             "id": "openAI_1",
             "position": {
-                "x": 663.1307301893027,
-                "y": 394.7618562930441
+                "x": 510.75932526856377,
+                "y": -44.80152395958956
             },
             "type": "customNode",
             "data": {
@@ -103,13 +20,13 @@
                 "description": "Wrapper around OpenAI large language models",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "openAI_1-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -232,54 +149,60 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 663.1307301893027,
-                "y": 394.7618562930441
+                "x": 510.75932526856377,
+                "y": -44.80152395958956
             },
             "dragging": false
         },
         {
             "width": 300,
-            "height": 280,
-            "id": "mrklAgentLLM_0",
+            "height": 534,
+            "id": "promptTemplate_1",
             "position": {
-                "x": 1055.3271135179489,
-                "y": 245.36098016819074
+                "x": 514.5434056794296,
+                "y": 507.47798128037107
             },
             "type": "customNode",
             "data": {
-                "id": "mrklAgentLLM_0",
-                "label": "MRKL Agent for LLMs",
-                "name": "mrklAgentLLM",
-                "type": "AgentExecutor",
-                "baseClasses": ["AgentExecutor", "BaseChain", "BaseLangChain"],
-                "category": "Agents",
-                "description": "Agent that uses the ReAct Framework to decide what action to take, optimized to be used with LLMs",
-                "inputParams": [],
-                "inputAnchors": [
+                "id": "promptTemplate_1",
+                "label": "Prompt Template",
+                "name": "promptTemplate",
+                "type": "PromptTemplate",
+                "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
+                "category": "Prompts",
+                "description": "Schema to represent a basic prompt for an LLM",
+                "inputParams": [
                     {
-                        "label": "Allowed Tools",
-                        "name": "tools",
-                        "type": "Tool",
-                        "list": true,
-                        "id": "mrklAgentLLM_0-input-tools-Tool"
+                        "label": "Template",
+                        "name": "template",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "What is a good name for a company that makes {product}?",
+                        "id": "promptTemplate_1-input-template-string"
                     },
                     {
-                        "label": "Language Model",
-                        "name": "model",
-                        "type": "BaseLanguageModel",
-                        "id": "mrklAgentLLM_0-input-model-BaseLanguageModel"
+                        "label": "Format Prompt Values",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"input_language\": \"English\",\n  \"output_language\": \"French\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "promptTemplate_1-input-promptValues-string"
                     }
                 ],
+                "inputAnchors": [],
                 "inputs": {
-                    "tools": ["{{calculator_1.data.instance}}", "{{serpAPI_1.data.instance}}"],
-                    "model": "{{openAI_1.data.instance}}"
+                    "template": "",
+                    "promptValues": ""
                 },
                 "outputAnchors": [
                     {
-                        "id": "mrklAgentLLM_0-output-mrklAgentLLM-AgentExecutor|BaseChain|BaseLangChain",
-                        "name": "mrklAgentLLM",
-                        "label": "AgentExecutor",
-                        "type": "AgentExecutor | BaseChain | BaseLangChain"
+                        "id": "promptTemplate_1-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+                        "name": "promptTemplate",
+                        "label": "PromptTemplate",
+                        "type": "PromptTemplate | BaseStringPromptTemplate | BasePromptTemplate"
                     }
                 ],
                 "outputs": {},
@@ -287,42 +210,111 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 1055.3271135179489,
-                "y": 245.36098016819074
+                "x": 514.5434056794296,
+                "y": 507.47798128037107
             },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 407,
+            "id": "llmChain_1",
+            "position": {
+                "x": 970.9254258940236,
+                "y": 320.56761595884564
+            },
+            "type": "customNode",
+            "data": {
+                "id": "llmChain_1",
+                "label": "LLM Chain",
+                "name": "llmChain",
+                "type": "LLMChain",
+                "baseClasses": ["LLMChain", "BaseChain", "BaseLangChain"],
+                "category": "Chains",
+                "description": "Chain to run queries against LLMs",
+                "inputParams": [
+                    {
+                        "label": "Chain Name",
+                        "name": "chainName",
+                        "type": "string",
+                        "placeholder": "Name Your Chain",
+                        "optional": true,
+                        "id": "llmChain_1-input-chainName-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "Language Model",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "llmChain_1-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "Prompt",
+                        "name": "prompt",
+                        "type": "BasePromptTemplate",
+                        "id": "llmChain_1-input-prompt-BasePromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_1.data.instance}}",
+                    "prompt": "{{promptTemplate_1.data.instance}}",
+                    "chainName": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "输出",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "llmChain_1-output-llmChain-LLMChain|BaseChain|BaseLangChain",
+                                "name": "llmChain",
+                                "label": "LLM Chain",
+                                "type": "LLMChain | BaseChain | BaseLangChain"
+                            },
+                            {
+                                "id": "llmChain_1-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "Output Prediction",
+                                "type": "string"
+                            }
+                        ],
+                        "default": "llmChain"
+                    }
+                ],
+                "outputs": {
+                    "output": "llmChain"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 970.9254258940236,
+                "y": 320.56761595884564
+            },
+            "selected": false,
             "dragging": false
         }
     ],
     "edges": [
         {
-            "source": "calculator_1",
-            "sourceHandle": "calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain",
-            "target": "mrklAgentLLM_0",
-            "targetHandle": "mrklAgentLLM_0-input-tools-Tool",
-            "type": "buttonedge",
-            "id": "calculator_1-calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-tools-Tool",
-            "data": {
-                "label": ""
-            }
-        },
-        {
-            "source": "serpAPI_1",
-            "sourceHandle": "serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain",
-            "target": "mrklAgentLLM_0",
-            "targetHandle": "mrklAgentLLM_0-input-tools-Tool",
-            "type": "buttonedge",
-            "id": "serpAPI_1-serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-tools-Tool",
-            "data": {
-                "label": ""
-            }
-        },
-        {
             "source": "openAI_1",
             "sourceHandle": "openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
-            "target": "mrklAgentLLM_0",
-            "targetHandle": "mrklAgentLLM_0-input-model-BaseLanguageModel",
+            "target": "llmChain_1",
+            "targetHandle": "llmChain_1-input-model-BaseLanguageModel",
             "type": "buttonedge",
-            "id": "openAI_1-openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-model-BaseLanguageModel",
+            "id": "openAI_1-openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain-llmChain_1-llmChain_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "promptTemplate_1",
+            "sourceHandle": "promptTemplate_1-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_1",
+            "targetHandle": "llmChain_1-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "promptTemplate_1-promptTemplate_1-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate-llmChain_1-llmChain_1-input-prompt-BasePromptTemplate",
             "data": {
                 "label": ""
             }

@@ -1,5 +1,5 @@
 {
-    "description": "QnA chain using local LLM, Embedding models, and Faiss local vector store",
+    "description": "使用本地 LLM、嵌入模型和 Faiss 本地向量存储的问答链",
     "nodes": [
         {
             "width": 300,
@@ -177,7 +177,7 @@
                         "label": "Base Path to store",
                         "name": "basePath",
                         "description": "Path to store faiss.index file",
-                        "placeholder": "C:\\Users\\User\\Desktop",
+                        "placeholder": "~/temp",
                         "type": "string",
                         "id": "faissUpsert_0-input-basePath-string"
                     },
@@ -216,7 +216,7 @@
                 "outputAnchors": [
                     {
                         "name": "output",
-                        "label": "Output",
+                        "label": "输出",
                         "type": "options",
                         "options": [
                             {
@@ -273,7 +273,7 @@
                         "id": "chatLocalAI_0-input-basePath-string"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "string",
                         "placeholder": "gpt4all-lora-quantized.bin",
@@ -430,7 +430,7 @@
                         "id": "localAIEmbeddings_0-input-basePath-string"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "string",
                         "placeholder": "text-embedding-ada-002",

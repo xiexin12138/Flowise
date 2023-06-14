@@ -14,7 +14,7 @@ class ReadFile_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Read File'
+        this.label = '读取文件'
         this.name = 'readFile'
         this.type = 'ReadFile'
         this.icon = 'readfile.svg'
@@ -25,7 +25,7 @@ class ReadFile_Tools implements INode {
             {
                 label: 'Base Path',
                 name: 'basePath',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                placeholder: `~/temp`,
                 type: 'string',
                 optional: true
             }

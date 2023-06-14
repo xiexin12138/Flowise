@@ -38,7 +38,8 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
     const [loading, setLoading] = useState(false)
     const [messages, setMessages] = useState([
         {
-            message: 'Hi there! How can I help?',
+            message: '你好！我能为你做什么？',
+            // message: 'Hi there! How can I help?',
             type: 'apiMessage'
         }
     ])
@@ -239,7 +240,8 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
             setLoading(false)
             setMessages([
                 {
-                    message: 'Hi there! How can I help?',
+                    message: '你好！我能为你做什么？',
+                    // message: 'Hi there! How can I help?',
                     type: 'apiMessage'
                 }
             ])
@@ -362,7 +364,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                             onKeyDown={handleEnter}
                             id='userInput'
                             name='userInput'
-                            placeholder={loading ? 'Waiting for response...' : 'Type your question...'}
+                            placeholder={loading ? '等待回复中...' : '输入你的问题...'}
                             value={userInput}
                             onChange={onChange}
                             multiline={true}
@@ -376,7 +378,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                                         ) : (
                                             // Send icon SVG in input field
                                             <IconSend
-                                                color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#1e88e5'}
+                                                color={loading || !chatflowid ? '#9e9e9e' : customization.isDarkMode ? 'white' : '#a6002c'}
                                             />
                                         )}
                                     </IconButton>

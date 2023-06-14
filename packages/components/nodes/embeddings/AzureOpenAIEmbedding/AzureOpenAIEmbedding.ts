@@ -14,7 +14,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure OpenAI Embeddings'
+        this.label = 'Azure OpenAI 嵌入'
         this.name = 'azureOpenAIEmbeddings'
         this.type = 'AzureOpenAIEmbeddings'
         this.icon = 'Azure.svg'

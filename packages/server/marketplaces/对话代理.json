@@ -1,5 +1,5 @@
 {
-    "description": "A conversational agent for a chat model which utilize chat specific prompts",
+    "description": "利用聊天特定提示的聊天模型的对话代理",
     "nodes": [
         {
             "width": 300,
@@ -20,13 +20,13 @@
                 "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "chatOpenAI_1-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -159,7 +159,7 @@
                 "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
                 "inputParams": [
                     {
-                        "label": "Serp Api Key",
+                        "label": "Serp Api 密钥",
                         "name": "apiKey",
                         "type": "password",
                         "id": "serpAPI_1-input-apiKey-password"

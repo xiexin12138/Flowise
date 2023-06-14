@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback, useContext } from 'react'
-import ReactFlow, { addEdge, Controls, Background, useNodesState, useEdgesState } from 'reactflow'
+import ReactFlow, { addEdge, Controls, MiniMap, Background, useNodesState, useEdgesState } from 'reactflow'
 import 'reactflow/dist/style.css'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -43,6 +43,8 @@ import useNotifier from 'utils/useNotifier'
 
 const nodeTypes = { customNode: CanvasNode }
 const edgeTypes = { buttonedge: ButtonEdge }
+
+const minimapStyle = { height: 120 }
 
 // ==============================|| CANVAS ||============================== //
 
@@ -153,10 +155,10 @@ const Canvas = () => {
 
     const handleDeleteFlow = async () => {
         const confirmPayload = {
-            title: `Delete`,
-            description: `Delete chatflow ${chatflow.name}?`,
-            confirmButtonName: 'Delete',
-            cancelButtonName: 'Cancel'
+            title: `删除`,
+            description: `删除编排 ${chatflow.name}?`,
+            confirmButtonName: '删除', // confirmButtonName: 'Delete',
+            cancelButtonName: '取消' // cancelButtonName: 'Cancel'
         }
         const isConfirmed = await confirm(confirmPayload)
 
@@ -297,7 +299,8 @@ const Canvas = () => {
     const saveChatflowSuccess = () => {
         dispatch({ type: REMOVE_DIRTY })
         enqueueSnackbar({
-            message: 'Chatflow saved',
+            message: '服务编排已保存',
+            // message: 'Chatflow saved',
             options: {
                 key: new Date().getTime() + Math.random(),
                 variant: 'success',
@@ -383,7 +386,8 @@ const Canvas = () => {
     useEffect(() => {
         if (testChatflowApi.error) {
             enqueueSnackbar({
-                message: 'Test chatflow failed',
+                message: '服务编排测试失败',
+                // message: 'Test chatflow failed',
                 options: {
                     key: new Date().getTime() + Math.random(),
                     variant: 'error',
@@ -417,7 +421,8 @@ const Canvas = () => {
             dispatch({
                 type: SET_CHATFLOW,
                 chatflow: {
-                    name: 'Untitled chatflow'
+                    name: '未命名编排'
+                    // name: 'Untitled chatflow'
                 }
             })
         }
@@ -462,7 +467,7 @@ const Canvas = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [templateFlowData])
 
-    usePrompt('You have unsaved changes! Do you want to navigate away?', canvasDataStore.isDirty)
+    usePrompt('你有未保存的更改！你是否要离开？', canvasDataStore.isDirty)
 
     return (
         <>
@@ -504,6 +509,7 @@ const Canvas = () => {
                                 fitView
                                 minZoom={0.1}
                             >
+                                <MiniMap style={minimapStyle} zoomable pannable />
                                 <Controls
                                     style={{
                                         display: 'flex',

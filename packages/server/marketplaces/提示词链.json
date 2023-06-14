@@ -1,5 +1,5 @@
 {
-    "description": "Use output from a chain as prompt for another chain",
+    "description": "使用一个链的输出作为另一个链的提示",
     "nodes": [
         {
             "width": 300,
@@ -20,13 +20,13 @@
                 "description": "Wrapper around OpenAI large language models",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "openAI_2-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -264,7 +264,7 @@
                 "outputAnchors": [
                     {
                         "name": "output",
-                        "label": "Output",
+                        "label": "输出",
                         "type": "options",
                         "options": [
                             {
@@ -375,13 +375,13 @@
                 "description": "Wrapper around OpenAI large language models",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "openAI_3-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -558,7 +558,7 @@
                 "outputAnchors": [
                     {
                         "name": "output",
-                        "label": "Output",
+                        "label": "输出",
                         "type": "options",
                         "options": [
                             {

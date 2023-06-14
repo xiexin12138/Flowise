@@ -12,7 +12,7 @@ class LocalAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'LocalAI Embeddings'
+        this.label = 'LocalAI 嵌入'
         this.name = 'localAIEmbeddings'
         this.type = 'LocalAI Embeddings'
         this.icon = 'localai.png'
@@ -27,7 +27,7 @@ class LocalAIEmbedding_Embeddings implements INode {
                 placeholder: 'http://localhost:8080/v1'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'string',
                 placeholder: 'text-embedding-ada-002'

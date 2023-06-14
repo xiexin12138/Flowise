@@ -110,7 +110,8 @@ const ProfileSection = ({ username, handleLogout }) => {
                     setLoading(false)
                 }
             } else {
-                alert('Incorrect Flowise Database Format')
+                alert('错误的编排格式')
+                // alert('Incorrect Flowise Database Format')
             }
         }
         reader.readAsText(file)
@@ -173,7 +174,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                     {username && (
                                         <Box sx={{ p: 2 }}>
                                             <Typography component='span' variant='h4'>
-                                                {username}
+                                                {username}, 欢迎你
                                             </Typography>
                                         </Box>
                                     )}
@@ -206,7 +207,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileDownload stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Load Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>导入服务编排</Typography>} />
                                                 </ListItemButton>
                                                 <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
@@ -215,9 +216,9 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileExport stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Export Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>导出服务编排</Typography>} />
                                                 </ListItemButton>
-                                                <ListItemButton
+                                                {/* <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
                                                     onClick={() => {
                                                         setOpen(false)
@@ -228,7 +229,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                         <IconInfoCircle stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
                                                     <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />
-                                                </ListItemButton>
+                                                </ListItemButton> */}
                                                 {localStorage.getItem('username') && localStorage.getItem('password') && (
                                                     <ListItemButton
                                                         sx={{ borderRadius: `${customization.borderRadius}px` }}
@@ -237,7 +238,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                         <ListItemIcon>
                                                             <IconLogout stroke={1.5} size='1.3rem' />
                                                         </ListItemIcon>
-                                                        <ListItemText primary={<Typography variant='body2'>Logout</Typography>} />
+                                                        <ListItemText primary={<Typography variant='body2'>退出登录</Typography>} />
                                                     </ListItemButton>
                                                 )}
                                             </List>

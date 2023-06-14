@@ -16,7 +16,7 @@ class Supabase_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Supabase Load Existing Index'
+        this.label = 'Supabase 加载现有索引'
         this.name = 'supabaseExistingIndex'
         this.type = 'Supabase'
         this.icon = 'supabase.svg'

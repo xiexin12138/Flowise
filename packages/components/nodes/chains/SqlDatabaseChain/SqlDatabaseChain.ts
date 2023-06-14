@@ -45,7 +45,7 @@ class SqlDatabaseChain_Chains implements INode {
                 label: 'Database File Path',
                 name: 'dbFilePath',
                 type: 'string',
-                placeholder: 'C:/Users/chinook.db'
+                placeholder: '~\temp\chinook.db'
             }
         ]
     }

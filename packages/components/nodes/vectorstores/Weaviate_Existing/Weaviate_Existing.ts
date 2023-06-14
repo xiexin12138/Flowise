@@ -16,7 +16,7 @@ class Weaviate_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Weaviate Load Existing Index'
+        this.label = 'Weaviate 加载现有索引'
         this.name = 'weaviateExistingIndex'
         this.type = 'Weaviate'
         this.icon = 'weaviate.png'

@@ -64,8 +64,10 @@ const Chatflows = () => {
         if (getAllChatflowsApi.error) {
             if (getAllChatflowsApi.error?.response?.status === 401) {
                 setLoginDialogProps({
-                    title: 'Login',
-                    confirmButtonName: 'Login'
+                    title: '登录',
+                    // title: 'Login',
+                    confirmButtonName: '登录'
+                    // confirmButtonName: 'Login'
                 })
                 setLoginDialogOpen(true)
             }
@@ -103,12 +105,12 @@ const Chatflows = () => {
     return (
         <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
             <Stack flexDirection='row'>
-                <h1>Chatflows</h1>
+                <h1 style={{ whiteSpace: 'nowrap' }}>AI 服务编排</h1>
                 <Grid sx={{ mb: 1.25 }} container direction='row'>
                     <Box sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <StyledButton variant='contained' sx={{ color: 'white' }} onClick={addNew} startIcon={<IconPlus />}>
-                            Add New
+                            新增编排
                         </StyledButton>
                     </Grid>
                 </Grid>
@@ -127,7 +129,7 @@ const Chatflows = () => {
                     <Box sx={{ p: 2, height: 'auto' }}>
                         <img style={{ objectFit: 'cover', height: '30vh', width: 'auto' }} src={WorkflowEmptySVG} alt='WorkflowEmptySVG' />
                     </Box>
-                    <div>No Chatflows Yet</div>
+                    <div>暂无编排</div>
                 </Stack>
             )}
             <LoginDialog show={loginDialogOpen} dialogProps={loginDialogProps} onConfirm={onLoginClick} />

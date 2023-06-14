@@ -1,5 +1,5 @@
 {
-    "description": "A chain that automatically picks an appropriate prompt from multiple prompts",
+    "description": "从多个提示中自动选择适当提示词的链",
     "nodes": [
         {
             "width": 300,
@@ -280,13 +280,13 @@
                 "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "chatOpenAI_0-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [

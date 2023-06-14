@@ -1,5 +1,5 @@
 {
-    "description": "Use AutoGPT - Autonomous agent with chain of thoughts for self-guided task completion",
+    "description": "使用 AutoGPT - 具有思维链的自治代理，用于自助完成任务",
     "nodes": [
         {
             "width": 300,
@@ -110,13 +110,13 @@
                 "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "chatOpenAI_1-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -241,7 +241,7 @@
             "type": "customNode",
             "data": {
                 "id": "writeFile_1",
-                "label": "Write File",
+                "label": "写入文件",
                 "name": "writeFile",
                 "type": "WriteFile",
                 "baseClasses": ["WriteFile", "Tool", "StructuredTool", "BaseLangChain"],
@@ -251,7 +251,7 @@
                     {
                         "label": "Base Path",
                         "name": "basePath",
-                        "placeholder": "C:\\Users\\User\\Desktop",
+                        "placeholder": "~/temp",
                         "type": "string",
                         "optional": true,
                         "id": "writeFile_1-input-basePath-string"
@@ -290,7 +290,7 @@
             "type": "customNode",
             "data": {
                 "id": "readFile_0",
-                "label": "Read File",
+                "label": "读取文件",
                 "name": "readFile",
                 "type": "ReadFile",
                 "baseClasses": ["ReadFile", "Tool", "StructuredTool", "BaseLangChain"],
@@ -300,7 +300,7 @@
                     {
                         "label": "Base Path",
                         "name": "basePath",
-                        "placeholder": "C:\\Users\\User\\Desktop",
+                        "placeholder": "~/temp",
                         "type": "string",
                         "optional": true,
                         "id": "readFile_0-input-basePath-string"
@@ -347,7 +347,7 @@
                 "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
                 "inputParams": [
                     {
-                        "label": "Serp Api Key",
+                        "label": "Serp Api 密钥",
                         "name": "apiKey",
                         "type": "password",
                         "id": "serpAPI_0-input-apiKey-password"
@@ -392,7 +392,7 @@
                 "description": "OpenAI API to generate embeddings for a given text",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "openAIEmbeddings_0-input-openAIApiKey-password"
@@ -465,7 +465,7 @@
             "type": "customNode",
             "data": {
                 "id": "pineconeExistingIndex_1",
-                "label": "Pinecone Load Existing Index",
+                "label": "Pinecone 加载现有索引",
                 "name": "pineconeExistingIndex",
                 "type": "Pinecone",
                 "baseClasses": ["Pinecone", "VectorStoreRetriever", "BaseRetriever"],
@@ -473,7 +473,7 @@
                 "description": "Load existing index from Pinecone (i.e: Document has been upserted)",
                 "inputParams": [
                     {
-                        "label": "Pinecone Api Key",
+                        "label": "Pinecone Api 密钥",
                         "name": "pineconeApiKey",
                         "type": "password",
                         "id": "pineconeExistingIndex_1-input-pineconeApiKey-password"
@@ -535,7 +535,7 @@
                 "outputAnchors": [
                     {
                         "name": "output",
-                        "label": "Output",
+                        "label": "输出",
                         "type": "options",
                         "options": [
                             {

@@ -80,7 +80,7 @@ export const initNode = (nodeData, newNodeId) => {
             }
             const newOutput = {
                 name: 'output',
-                label: 'Output',
+                label: '输出',
                 type: 'options',
                 options,
                 default: nodeData.outputs[0].name

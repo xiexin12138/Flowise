@@ -13,7 +13,7 @@ class HuggingFaceInferenceEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'HuggingFace Inference Embeddings'
+        this.label = 'HuggingFace Inference 嵌入'
         this.name = 'huggingFaceInferenceEmbeddings'
         this.type = 'HuggingFaceInferenceEmbeddings'
         this.icon = 'huggingface.png'

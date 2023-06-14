@@ -82,10 +82,10 @@ const APIKey = () => {
 
     const addNew = () => {
         const dialogProp = {
-            title: 'Add New API Key',
+            title: '新增 API 密钥',
             type: 'ADD',
-            cancelButtonName: 'Cancel',
-            confirmButtonName: 'Add'
+            cancelButtonName: '取消',
+            confirmButtonName: '新增'
         }
         setDialogProps(dialogProp)
         setShowDialog(true)
@@ -93,10 +93,10 @@ const APIKey = () => {
 
     const edit = (key) => {
         const dialogProp = {
-            title: 'Edit API Key',
+            title: '编辑 API 密钥',
             type: 'EDIT',
-            cancelButtonName: 'Cancel',
-            confirmButtonName: 'Save',
+            cancelButtonName: '取消',
+            confirmButtonName: '保存',
             key
         }
         setDialogProps(dialogProp)
@@ -105,10 +105,10 @@ const APIKey = () => {
 
     const deleteKey = async (key) => {
         const confirmPayload = {
-            title: `Delete`,
-            description: `Delete key ${key.keyName}?`,
-            confirmButtonName: 'Delete',
-            cancelButtonName: 'Cancel'
+            title: `删除`,
+            description: `删除秘钥 ${key.keyName}?`,
+            confirmButtonName: '删除', // confirmButtonName: 'Delete',
+            cancelButtonName: '取消' // cancelButtonName: 'Cancel'
         }
         const isConfirmed = await confirm(confirmPayload)
 
@@ -117,7 +117,7 @@ const APIKey = () => {
                 const deleteResp = await apiKeyApi.deleteAPI(key.id)
                 if (deleteResp.data) {
                     enqueueSnackbar({
-                        message: 'API key deleted',
+                        message: 'API 秘钥已删除',
                         options: {
                             key: new Date().getTime() + Math.random(),
                             variant: 'success',
@@ -133,7 +133,8 @@ const APIKey = () => {
             } catch (error) {
                 const errorData = error.response.data || `${error.response.status}: ${error.response.statusText}`
                 enqueueSnackbar({
-                    message: `Failed to delete API key: ${errorData}`,
+                    message: `删除 API 秘钥失败: ${errorData}`,
+                    // message: `Failed to delete API key: ${errorData}`,
                     options: {
                         key: new Date().getTime() + Math.random(),
                         variant: 'error',
@@ -171,11 +172,11 @@ const APIKey = () => {
         <>
             <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
                 <Stack flexDirection='row'>
-                    <h1>API Keys&nbsp;</h1>
+                    <h1 style={{ whiteSpace: 'nowrap' }}>API 密钥&nbsp;</h1>
                     <Box sx={{ flexGrow: 1 }} />
 
                     <StyledButton variant='contained' sx={{ color: 'white', mr: 1, height: 37 }} onClick={addNew} startIcon={<IconPlus />}>
-                        Create Key
+                        新增密钥
                     </StyledButton>
                 </Stack>
                 {apiKeys.length <= 0 && (
@@ -183,7 +184,7 @@ const APIKey = () => {
                         <Box sx={{ p: 2, height: 'auto' }}>
                             <img style={{ objectFit: 'cover', height: '30vh', width: 'auto' }} src={APIEmptySVG} alt='APIEmptySVG' />
                         </Box>
-                        <div>No API Keys Yet</div>
+                        <div>暂无 API 秘钥</div>
                     </Stack>
                 )}
                 {apiKeys.length > 0 && (
@@ -191,9 +192,12 @@ const APIKey = () => {
                         <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Key Name</TableCell>
-                                    <TableCell>API Key</TableCell>
-                                    <TableCell>Created</TableCell>
+                                    <TableCell>密钥名称</TableCell>
+                                    {/* <TableCell>Key Name</TableCell> */}
+                                    <TableCell>API 密钥</TableCell>
+                                    {/* <TableCell>API Key</TableCell> */}
+                                    <TableCell>创建时间</TableCell>
+                                    {/* <TableCell>Created</TableCell> */}
                                     <TableCell> </TableCell>
                                     <TableCell> </TableCell>
                                 </TableRow>
@@ -211,7 +215,7 @@ const APIKey = () => {
                                                       key.apiKey.length - 5
                                                   )}`}
                                             <IconButton
-                                                title='Copy'
+                                                title='复制'
                                                 color='success'
                                                 onClick={(event) => {
                                                     navigator.clipboard.writeText(key.apiKey)
@@ -223,7 +227,8 @@ const APIKey = () => {
                                             >
                                                 <IconCopy />
                                             </IconButton>
-                                            <IconButton title='Show' color='inherit' onClick={() => onShowApiKeyClick(key.apiKey)}>
+                                            <IconButton title='现实' color='inherit' onClick={() => onShowApiKeyClick(key.apiKey)}>
+                                                {/* <IconButton title='Show' color='inherit' onClick={() => onShowApiKeyClick(key.apiKey)}> */}
                                                 {showApiKeys.includes(key.apiKey) ? <IconEyeOff /> : <IconEye />}
                                             </IconButton>
                                             <Popover
@@ -243,18 +248,18 @@ const APIKey = () => {
                                                     variant='h6'
                                                     sx={{ pl: 1, pr: 1, color: 'white', background: theme.palette.success.dark }}
                                                 >
-                                                    Copied!
+                                                    已复制!
                                                 </Typography>
                                             </Popover>
                                         </TableCell>
                                         <TableCell>{key.createdAt}</TableCell>
                                         <TableCell>
-                                            <IconButton title='Edit' color='primary' onClick={() => edit(key)}>
+                                            <IconButton title='编辑' color='primary' onClick={() => edit(key)}>
                                                 <IconEdit />
                                             </IconButton>
                                         </TableCell>
                                         <TableCell>
-                                            <IconButton title='Delete' color='error' onClick={() => deleteKey(key)}>
+                                            <IconButton title='删除' color='error' onClick={() => deleteKey(key)}>
                                                 <IconTrash />
                                             </IconButton>
                                         </TableCell>

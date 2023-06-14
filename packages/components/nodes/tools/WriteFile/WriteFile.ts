@@ -14,7 +14,7 @@ class WriteFile_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Write File'
+        this.label = '写入文件'
         this.name = 'writeFile'
         this.type = 'WriteFile'
         this.icon = 'writefile.svg'
@@ -25,7 +25,7 @@ class WriteFile_Tools implements INode {
             {
                 label: 'Base Path',
                 name: 'basePath',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                placeholder: `~/temp`,
                 type: 'string',
                 optional: true
             }

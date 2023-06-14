@@ -10,11 +10,12 @@ const Logo = () => {
 
     return (
         <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'row' }}>
-            <img
+            <h1>应用智造空间</h1>
+            {/* <img
                 style={{ objectFit: 'contain', height: 'auto', width: 150 }}
                 src={customization.isDarkMode ? logoDark : logo}
                 alt='Flowise'
-            />
+            /> */}
         </div>
     )
 }

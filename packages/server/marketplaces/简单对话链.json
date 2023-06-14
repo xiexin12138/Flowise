@@ -1,5 +1,5 @@
 {
-    "description": "Basic example of Conversation Chain with built-in memory - works exactly like ChatGPT",
+    "description": "具有内置内存的对话链的基本示例 - 与 ChatGPT 完全相同",
     "nodes": [
         {
             "width": 300,
@@ -20,13 +20,13 @@
                 "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
                         "id": "chatOpenAI_0-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [

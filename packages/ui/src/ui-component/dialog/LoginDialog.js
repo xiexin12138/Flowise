@@ -9,13 +9,13 @@ import { Input } from 'ui-component/input/Input'
 const LoginDialog = ({ show, dialogProps, onConfirm }) => {
     const portalElement = document.getElementById('portal')
     const usernameInput = {
-        label: 'Username',
+        label: '用户名',
         name: 'username',
         type: 'string',
         placeholder: 'john doe'
     }
     const passwordInput = {
-        label: 'Password',
+        label: '密码',
         name: 'password',
         type: 'password'
     }

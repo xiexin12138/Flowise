@@ -81,7 +81,7 @@ export const CodeBlock = memo(({ language, chatflowid, isDialog, value }) => {
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     {language}
                     <div style={{ flex: 1 }}></div>
-                    <IconButton size='small' title='Copy' color='success' onClick={copyToClipboard}>
+                    <IconButton size='small' title='复制' color='success' onClick={copyToClipboard}>
                         <IconClipboard />
                     </IconButton>
                     <Popover
@@ -98,10 +98,11 @@ export const CodeBlock = memo(({ language, chatflowid, isDialog, value }) => {
                         }}
                     >
                         <Typography variant='h6' sx={{ pl: 1, pr: 1, color: 'white', background: theme.palette.success.dark }}>
-                            Copied!
+                            已复制!
+                            {/* Copied! */}
                         </Typography>
                     </Popover>
-                    <IconButton size='small' title='Download' color='primary' onClick={downloadAsFile}>
+                    <IconButton size='small' title='下载' color='primary' onClick={downloadAsFile}>
                         <IconDownload />
                     </IconButton>
                 </div>

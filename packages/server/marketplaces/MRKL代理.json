@@ -1,39 +1,39 @@
 {
-    "description": "An agent that uses Zapier NLA to accesss apps and actions on Zapier's platform",
+    "description": "使用 React 框架来决定要执行的操作的代理",
     "nodes": [
         {
             "width": 300,
             "height": 278,
-            "id": "zapierNLA_0",
+            "id": "serpAPI_1",
             "position": {
-                "x": 546.0561178227484,
-                "y": 83.03303671691799
+                "x": 312.0655985817535,
+                "y": 112.09909989842703
             },
             "type": "customNode",
             "data": {
-                "id": "zapierNLA_0",
-                "label": "Zapier NLA",
-                "name": "zapierNLA",
-                "type": "ZapierNLA",
-                "baseClasses": ["ZapierNLA", "Tool"],
+                "id": "serpAPI_1",
+                "label": "Serp API",
+                "name": "serpAPI",
+                "type": "SerpAPI",
+                "baseClasses": ["SerpAPI", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Access to apps and actions on Zapier's platform through a natural language API interface",
+                "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
                 "inputParams": [
                     {
-                        "label": "Zapier NLA Api Key",
+                        "label": "Serp Api 密钥",
                         "name": "apiKey",
                         "type": "password",
-                        "id": "zapierNLA_0-input-apiKey-password"
+                        "id": "serpAPI_1-input-apiKey-password"
                     }
                 ],
                 "inputAnchors": [],
                 "inputs": {},
                 "outputAnchors": [
                     {
-                        "id": "zapierNLA_0-output-zapierNLA-ZapierNLA|Tool",
-                        "name": "zapierNLA",
-                        "label": "ZapierNLA",
-                        "type": "ZapierNLA | Tool"
+                        "id": "serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain",
+                        "name": "serpAPI",
+                        "label": "SerpAPI",
+                        "type": "SerpAPI | Tool | StructuredTool | BaseLangChain"
                     }
                 ],
                 "outputs": {},
@@ -41,22 +41,60 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 546.0561178227484,
-                "y": 83.03303671691799
+                "x": 312.0655985817535,
+                "y": 112.09909989842703
             },
             "dragging": false
         },
         {
             "width": 300,
-            "height": 524,
-            "id": "openAI_0",
+            "height": 143,
+            "id": "calculator_1",
             "position": {
-                "x": 547.3867724775708,
-                "y": 394.1919189424442
+                "x": 664.1366474718458,
+                "y": 123.16419000640141
             },
             "type": "customNode",
             "data": {
-                "id": "openAI_0",
+                "id": "calculator_1",
+                "label": "Calculator",
+                "name": "calculator",
+                "type": "Calculator",
+                "baseClasses": ["Calculator", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "Tools",
+                "description": "Perform calculations on response",
+                "inputParams": [],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain",
+                        "name": "calculator",
+                        "label": "Calculator",
+                        "type": "Calculator | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 664.1366474718458,
+                "y": 123.16419000640141
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 524,
+            "id": "openAI_1",
+            "position": {
+                "x": 663.1307301893027,
+                "y": 394.7618562930441
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_1",
                 "label": "OpenAI",
                 "name": "openAI",
                 "type": "OpenAI",
@@ -65,13 +103,13 @@
                 "description": "Wrapper around OpenAI large language models",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api 密钥",
                         "name": "openAIApiKey",
                         "type": "password",
-                        "id": "openAI_0-input-openAIApiKey-password"
+                        "id": "openAI_1-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "模型名称",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -94,7 +132,7 @@
                         ],
                         "default": "text-davinci-003",
                         "optional": true,
-                        "id": "openAI_0-input-modelName-options"
+                        "id": "openAI_1-input-modelName-options"
                     },
                     {
                         "label": "Temperature",
@@ -102,7 +140,7 @@
                         "type": "number",
                         "default": 0.7,
                         "optional": true,
-                        "id": "openAI_0-input-temperature-number"
+                        "id": "openAI_1-input-temperature-number"
                     },
                     {
                         "label": "Max Tokens",
@@ -110,7 +148,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-maxTokens-number"
+                        "id": "openAI_1-input-maxTokens-number"
                     },
                     {
                         "label": "Top Probability",
@@ -118,7 +156,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-topP-number"
+                        "id": "openAI_1-input-topP-number"
                     },
                     {
                         "label": "Best Of",
@@ -126,7 +164,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-bestOf-number"
+                        "id": "openAI_1-input-bestOf-number"
                     },
                     {
                         "label": "Frequency Penalty",
@@ -134,7 +172,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-frequencyPenalty-number"
+                        "id": "openAI_1-input-frequencyPenalty-number"
                     },
                     {
                         "label": "Presence Penalty",
@@ -142,7 +180,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-presencePenalty-number"
+                        "id": "openAI_1-input-presencePenalty-number"
                     },
                     {
                         "label": "Batch Size",
@@ -150,7 +188,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-batchSize-number"
+                        "id": "openAI_1-input-batchSize-number"
                     },
                     {
                         "label": "Timeout",
@@ -158,7 +196,7 @@
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-timeout-number"
+                        "id": "openAI_1-input-timeout-number"
                     },
                     {
                         "label": "BasePath",
@@ -166,7 +204,7 @@
                         "type": "string",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_0-input-basepath-string"
+                        "id": "openAI_1-input-basepath-string"
                     }
                 ],
                 "inputAnchors": [],
@@ -183,7 +221,7 @@
                 },
                 "outputAnchors": [
                     {
-                        "id": "openAI_0-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "id": "openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
                         "name": "openAI",
                         "label": "OpenAI",
                         "type": "OpenAI | BaseLLM | BaseLanguageModel | BaseLangChain"
@@ -194,8 +232,8 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 547.3867724775708,
-                "y": 394.1919189424442
+                "x": 663.1307301893027,
+                "y": 394.7618562930441
             },
             "dragging": false
         },
@@ -204,8 +242,8 @@
             "height": 280,
             "id": "mrklAgentLLM_0",
             "position": {
-                "x": 1002.5779315680477,
-                "y": 329.9701389591812
+                "x": 1055.3271135179489,
+                "y": 245.36098016819074
             },
             "type": "customNode",
             "data": {
@@ -233,8 +271,8 @@
                     }
                 ],
                 "inputs": {
-                    "tools": ["{{zapierNLA_0.data.instance}}"],
-                    "model": "{{openAI_0.data.instance}}"
+                    "tools": ["{{calculator_1.data.instance}}", "{{serpAPI_1.data.instance}}"],
+                    "model": "{{openAI_1.data.instance}}"
                 },
                 "outputAnchors": [
                     {
@@ -247,32 +285,44 @@
                 "outputs": {},
                 "selected": false
             },
+            "selected": false,
             "positionAbsolute": {
-                "x": 1002.5779315680477,
-                "y": 329.9701389591812
+                "x": 1055.3271135179489,
+                "y": 245.36098016819074
             },
-            "selected": false
+            "dragging": false
         }
     ],
     "edges": [
         {
-            "source": "zapierNLA_0",
-            "sourceHandle": "zapierNLA_0-output-zapierNLA-ZapierNLA|Tool",
+            "source": "calculator_1",
+            "sourceHandle": "calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain",
             "target": "mrklAgentLLM_0",
             "targetHandle": "mrklAgentLLM_0-input-tools-Tool",
             "type": "buttonedge",
-            "id": "zapierNLA_0-zapierNLA_0-output-zapierNLA-ZapierNLA|Tool-mrklAgentLLM_0-mrklAgentLLM_0-input-tools-Tool",
+            "id": "calculator_1-calculator_1-output-calculator-Calculator|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-tools-Tool",
             "data": {
                 "label": ""
             }
         },
         {
-            "source": "openAI_0",
-            "sourceHandle": "openAI_0-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "source": "serpAPI_1",
+            "sourceHandle": "serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentLLM_0",
+            "targetHandle": "mrklAgentLLM_0-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "serpAPI_1-serpAPI_1-output-serpAPI-SerpAPI|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_1",
+            "sourceHandle": "openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
             "target": "mrklAgentLLM_0",
             "targetHandle": "mrklAgentLLM_0-input-model-BaseLanguageModel",
             "type": "buttonedge",
-            "id": "openAI_0-openAI_0-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-model-BaseLanguageModel",
+            "id": "openAI_1-openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain-mrklAgentLLM_0-mrklAgentLLM_0-input-model-BaseLanguageModel",
             "data": {
                 "label": ""
             }

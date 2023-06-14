@@ -15,7 +15,7 @@ class Chroma_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Chroma Load Existing Index'
+        this.label = 'Chroma 加载现有索引'
         this.name = 'chromaExistingIndex'
         this.type = 'Chroma'
         this.icon = 'chroma.svg'

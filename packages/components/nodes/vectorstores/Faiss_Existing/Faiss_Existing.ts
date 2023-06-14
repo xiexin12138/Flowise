@@ -15,7 +15,7 @@ class Faiss_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Faiss Load Existing Index'
+        this.label = 'Faiss 加载现有索引'
         this.name = 'faissExistingIndex'
         this.type = 'Faiss'
         this.icon = 'faiss.svg'
@@ -32,7 +32,7 @@ class Faiss_Existing_VectorStores implements INode {
                 label: 'Base Path to load',
                 name: 'basePath',
                 description: 'Path to load faiss.index file',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                placeholder: `~/temp`,
                 type: 'string'
             },
             {

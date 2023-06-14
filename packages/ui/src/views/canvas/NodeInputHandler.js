@@ -43,7 +43,7 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
             inputParam,
             disabled,
             confirmButtonName: 'Save',
-            cancelButtonName: 'Cancel'
+            cancelButtonName: '取消' // cancelButtonName: 'Cancel'
         }
 
         if (!disabled) {
@@ -134,7 +134,7 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                                         height: 25,
                                         width: 25
                                     }}
-                                    title='Expand'
+                                    title='展开'
                                     color='primary'
                                     onClick={() =>
                                         onExpandDialogClicked(data.inputs[inputParam.name] ?? inputParam.default ?? '', inputParam)

@@ -34,7 +34,7 @@ const SaveChatflowDialog = ({ show, dialogProps, onCancel, onConfirm }) => {
                     id='chatflow-name'
                     type='text'
                     fullWidth
-                    placeholder='My New Chatflow'
+                    placeholder='我新的服务编排'
                     value={chatflowName}
                     onChange={(e) => setChatflowName(e.target.value)}
                 />

@@ -4,8 +4,8 @@ export const initialState = {
     show: false,
     title: '',
     description: '',
-    confirmButtonName: 'OK',
-    cancelButtonName: 'Cancel'
+    confirmButtonName: '确认',
+    cancelButtonName: '取消' // cancelButtonName: 'Cancel'
 }
 
 const alertReducer = (state = initialState, action) => {
