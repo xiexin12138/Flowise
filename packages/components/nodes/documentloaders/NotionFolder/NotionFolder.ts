@@ -17,7 +17,7 @@ class NotionFolder_DocumentLoaders implements INode {
         this.name = 'notionFolder'
         this.type = 'Document'
         this.icon = 'notion.png'
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description = 'Load data from the exported and unzipped Notion folder'
         this.baseClasses = [this.type]
         this.inputs = [

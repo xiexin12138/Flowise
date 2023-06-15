@@ -17,7 +17,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -41,6 +41,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",
@@ -156,7 +160,7 @@
                 "type": "SerpAPI",
                 "baseClasses": ["SerpAPI", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
+                "description": "基于 SerpAPI 的包装器 - 一个用于访问Google搜索结果的实时API",
                 "inputParams": [
                     {
                         "label": "Serp Api 密钥",
@@ -201,7 +205,7 @@
                 "type": "Calculator",
                 "baseClasses": ["Calculator", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Perform calculations on response",
+                "description": "对响应执行计算",
                 "inputParams": [],
                 "inputAnchors": [],
                 "inputs": {},
@@ -239,7 +243,7 @@
                 "type": "BufferMemory",
                 "baseClasses": ["BufferMemory", "BaseChatMemory", "BaseMemory"],
                 "category": "Memory",
-                "description": "Remembers previous conversational back and forths directly",
+                "description": "直接记住之前的对话回合",
                 "inputParams": [
                     {
                         "label": "Memory Key",
@@ -295,7 +299,7 @@
                 "type": "AgentExecutor",
                 "baseClasses": ["AgentExecutor", "BaseChain", "BaseLangChain"],
                 "category": "Agents",
-                "description": "Conversational agent for a chat model. It will utilize chat specific prompts",
+                "description": "聊天模型的对话代理。它将利用特定于聊天的提示",
                 "inputParams": [
                     {
                         "label": "System Message",
@@ -318,7 +322,7 @@
                 ],
                 "inputAnchors": [
                     {
-                        "label": "Allowed Tools",
+                        "label": "允许的工具",
                         "name": "tools",
                         "type": "Tool",
                         "list": true,

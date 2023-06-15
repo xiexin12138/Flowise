@@ -12,12 +12,12 @@ class LocalAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'LocalAI 嵌入'
+        this.label = 'LocalAI Embeddings'
         this.name = 'localAIEmbeddings'
         this.type = 'LocalAI Embeddings'
         this.icon = 'localai.png'
-        this.category = 'Embeddings'
-        this.description = 'Use local embeddings models like llama.cpp'
+        this.category = '嵌入'
+        this.description = '使用本地嵌入模型，如 llama.cpp'
         this.baseClasses = [this.type, 'Embeddings']
         this.inputs = [
             {

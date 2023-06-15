@@ -17,13 +17,14 @@ class SerpAPI_Tools implements INode {
         this.name = 'serpAPI'
         this.type = 'SerpAPI'
         this.icon = 'serp.png'
-        this.category = 'Tools'
-        this.description = 'Wrapper around SerpAPI - a real-time API to access Google search results'
+        this.category = '工具'
+        this.description = '基于 SerpAPI 的包装器 - 一个用于访问Google搜索结果的实时API'
         this.inputs = [
             {
                 label: 'Serp Api Key',
                 name: 'apiKey',
-                type: 'password'
+                type: 'password',
+                default: process.env.SERP_API_KEY,
             }
         ]
         this.baseClasses = [this.type, ...getBaseClasses(SerpAPI)]
@@ -31,7 +32,11 @@ class SerpAPI_Tools implements INode {
 
     async init(nodeData: INodeData): Promise<any> {
         const apiKey = nodeData.inputs?.apiKey as string
-        return new SerpAPI(apiKey)
+        return new SerpAPI(apiKey, {
+            location: "Austin,Texas,United States",
+            hl: "zh-cn",
+            gl: "cn",
+          })
     }
 }
 

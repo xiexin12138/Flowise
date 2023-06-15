@@ -19,13 +19,13 @@ class MRKLAgentChat_Agents implements INode {
         this.label = 'MRKL Agent for Chat Models'
         this.name = 'mrklAgentChat'
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '代理'
         this.icon = 'agent.svg'
-        this.description = 'Agent that uses the ReAct Framework to decide what action to take, optimized to be used with Chat Models'
+        this.description = '使用 ReAct 框架决定要执行的操作的代理，经过优化可与聊天模型一起使用'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true

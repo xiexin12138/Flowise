@@ -17,7 +17,7 @@
                 "type": "PromptRetriever",
                 "baseClasses": ["PromptRetriever"],
                 "category": "Retrievers",
-                "description": "Store prompt template with name & description to be later queried by MultiPromptChain",
+                "description": "存储带有名称和描述的提示模板，然后由多提示词链进行查询",
                 "inputParams": [
                     {
                         "label": "Prompt Name",
@@ -84,7 +84,7 @@
                 "type": "MultiPromptChain",
                 "baseClasses": ["MultiPromptChain", "MultiRouteChain", "BaseChain", "BaseLangChain"],
                 "category": "Chains",
-                "description": "Chain automatically picks an appropriate prompt from multiple prompt templates",
+                "description": "能自动从多个提示词模板中选择适当模板的链。",
                 "inputParams": [],
                 "inputAnchors": [
                     {
@@ -143,7 +143,7 @@
                 "type": "PromptRetriever",
                 "baseClasses": ["PromptRetriever"],
                 "category": "Retrievers",
-                "description": "Store prompt template with name & description to be later queried by MultiPromptChain",
+                "description": "存储带有名称和描述的提示模板，然后由多提示词链进行查询",
                 "inputParams": [
                     {
                         "label": "Prompt Name",
@@ -210,7 +210,7 @@
                 "type": "PromptRetriever",
                 "baseClasses": ["PromptRetriever"],
                 "category": "Retrievers",
-                "description": "Store prompt template with name & description to be later queried by MultiPromptChain",
+                "description": "存储带有名称和描述的提示模板，然后由多提示词链进行查询",
                 "inputParams": [
                     {
                         "label": "Prompt Name",
@@ -277,7 +277,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -301,6 +301,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",

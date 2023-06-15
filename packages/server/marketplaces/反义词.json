@@ -1,5 +1,5 @@
 {
-    "description": "使用通过示例构建的少数镜头提示模板输出给定用户输入的反义词",
+    "description": "使用通过示例构建的少数镜头提示词模板输出给定用户输入的反义词",
     "nodes": [
         {
             "width": 300,
@@ -17,7 +17,7 @@
                 "type": "PromptTemplate",
                 "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
                 "category": "Prompts",
-                "description": "Schema to represent a basic prompt for an LLM",
+                "description": "表示大语言模型基本提示词的模板结构",
                 "inputParams": [
                     {
                         "label": "Template",
@@ -78,7 +78,7 @@
                 "type": "FewShotPromptTemplate",
                 "baseClasses": ["FewShotPromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
                 "category": "Prompts",
-                "description": "Prompt template you can build with examples",
+                "description": "可以使用示例构建的提示词模板",
                 "inputParams": [
                     {
                         "label": "Examples",
@@ -179,7 +179,7 @@
                 "type": "OpenAI",
                 "baseClasses": ["OpenAI", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
                 "category": "LLMs",
-                "description": "Wrapper around OpenAI large language models",
+                "description": "基于 OpenAI 大型语言模型的包装器",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -332,7 +332,7 @@
                 "type": "LLMChain",
                 "baseClasses": ["LLMChain", "BaseChain", "BaseLangChain"],
                 "category": "Chains",
-                "description": "Chain to run queries against LLMs",
+                "description": "用于对大语言模型运行查询的链",
                 "inputParams": [
                     {
                         "label": "Chain Name",

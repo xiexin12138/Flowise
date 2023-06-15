@@ -21,8 +21,8 @@ class InMemoryVectorStore_VectorStores implements INode {
         this.name = 'memoryVectorStore'
         this.type = 'Memory'
         this.icon = 'memory.svg'
-        this.category = 'Vector Stores'
-        this.description = 'In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.'
+        this.category = '向量存储'
+        this.description = '内存中向量存储，用于存储嵌入并对最相似的嵌入执行精确的线性搜索。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

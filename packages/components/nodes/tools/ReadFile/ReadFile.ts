@@ -18,8 +18,8 @@ class ReadFile_Tools implements INode {
         this.name = 'readFile'
         this.type = 'ReadFile'
         this.icon = 'readfile.svg'
-        this.category = 'Tools'
-        this.description = 'Read file from disk'
+        this.category = '工具'
+        this.description = '从磁盘读取文件'
         this.baseClasses = [this.type, 'Tool', ...getBaseClasses(ReadFileTool)]
         this.inputs = [
             {

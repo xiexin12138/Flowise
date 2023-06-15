@@ -1,5 +1,5 @@
 {
-    "description": "具有提示模板和LLM模型的无状态（无缓存）大语言链的基本示例",
+    "description": "具有提示词模板和LLM模型的无状态（无缓存）大语言链的基本示例",
     "nodes": [
         {
             "width": 300,
@@ -17,7 +17,7 @@
                 "type": "OpenAI",
                 "baseClasses": ["OpenAI", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
                 "category": "LLMs",
-                "description": "Wrapper around OpenAI large language models",
+                "description": "基于 OpenAI 大型语言模型的包装器",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -170,7 +170,7 @@
                 "type": "PromptTemplate",
                 "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
                 "category": "Prompts",
-                "description": "Schema to represent a basic prompt for an LLM",
+                "description": "表示大语言模型基本提示词的模板结构",
                 "inputParams": [
                     {
                         "label": "Template",
@@ -231,7 +231,7 @@
                 "type": "LLMChain",
                 "baseClasses": ["LLMChain", "BaseChain", "BaseLangChain"],
                 "category": "Chains",
-                "description": "Chain to run queries against LLMs",
+                "description": "用于对大语言模型运行查询的链",
                 "inputParams": [
                     {
                         "label": "Chain Name",

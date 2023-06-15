@@ -17,8 +17,8 @@ class PromptTemplate_Prompts implements INode {
         this.name = 'promptTemplate'
         this.type = 'PromptTemplate'
         this.icon = 'prompt.svg'
-        this.category = 'Prompts'
-        this.description = 'Schema to represent a basic prompt for an LLM'
+        this.category = '提示词'
+        this.description = '表示大语言模型基本提示词的模板结构'
         this.baseClasses = [...getBaseClasses(PromptTemplate)]
         this.inputs = [
             {
@@ -61,6 +61,8 @@ class PromptTemplate_Prompts implements INode {
                 template,
                 inputVariables
             }
+            console.log('🚀 options', options);
+            
             const prompt = new PromptTemplate(options)
             prompt.promptValues = promptValues
             return prompt

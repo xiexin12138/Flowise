@@ -16,8 +16,8 @@ class Calculator_Tools implements INode {
         this.name = 'calculator'
         this.type = 'Calculator'
         this.icon = 'calculator.svg'
-        this.category = 'Tools'
-        this.description = 'Perform calculations on response'
+        this.category = '工具'
+        this.description = '对响应执行计算'
         this.baseClasses = [this.type, ...getBaseClasses(Calculator)]
     }
 

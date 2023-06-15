@@ -17,8 +17,8 @@ class Confluence_DocumentLoaders implements INode {
         this.name = 'confluence'
         this.type = 'Document'
         this.icon = 'confluence.png'
-        this.category = 'Document Loaders'
-        this.description = `Load data from a Confluence Document`
+        this.category = '文档加载器'
+        this.description = `从 Confluence 文档加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {

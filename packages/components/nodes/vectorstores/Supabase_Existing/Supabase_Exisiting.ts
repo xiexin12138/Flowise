@@ -16,12 +16,12 @@ class Supabase_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Supabase 加载现有索引'
+        this.label = 'Supabase Load Existing Index'
         this.name = 'supabaseExistingIndex'
         this.type = 'Supabase'
         this.icon = 'supabase.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Supabase (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从Supabase加载现有索引（即：文档已经插值更新过）'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

@@ -17,7 +17,7 @@
                 "type": "RecursiveCharacterTextSplitter",
                 "baseClasses": ["RecursiveCharacterTextSplitter", "TextSplitter"],
                 "category": "Text Splitters",
-                "description": "Split documents recursively by different characters - starting with \"\n\n\", then \"\n\", then \" \"",
+                "description": "按不同字符递归拆分文档 - 从“\n\n”开始，然后是“\n”，然后是“ ”",
                 "inputParams": [
                     {
                         "label": "Chunk Size",
@@ -74,7 +74,7 @@
                 "type": "Document",
                 "baseClasses": ["Document"],
                 "category": "Document Loaders",
-                "description": "Load data from text files",
+                "description": "从文本文件加载数据",
                 "inputParams": [
                     {
                         "label": "Txt File",
@@ -138,7 +138,7 @@
                 "type": "OpenAIEmbeddings",
                 "baseClasses": ["OpenAIEmbeddings", "Embeddings"],
                 "category": "Embeddings",
-                "description": "OpenAI API to generate embeddings for a given text",
+                "description": "OpenAI API 用于为给定文本生成嵌入",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -219,7 +219,7 @@
                 "type": "Pinecone",
                 "baseClasses": ["Pinecone", "VectorStoreRetriever", "BaseRetriever"],
                 "category": "Vector Stores",
-                "description": "Upsert documents to Pinecone",
+                "description": "将文档插值更新到Pinecone中。",
                 "inputParams": [
                     {
                         "label": "Pinecone Api 密钥",
@@ -331,7 +331,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -355,6 +355,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",
@@ -470,7 +474,7 @@
                 "type": "ConversationalRetrievalQAChain",
                 "baseClasses": ["ConversationalRetrievalQAChain", "BaseChain", "BaseLangChain"],
                 "category": "Chains",
-                "description": "Document QA - built on RetrievalQAChain to provide a chat history component",
+                "description": "文档问答 - 基于 RetrievalQAChain 构建，提供了一个聊天历史组件。",
                 "inputParams": [
                     {
                         "label": "Return Source Documents",

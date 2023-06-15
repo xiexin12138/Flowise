@@ -18,8 +18,8 @@ class ChainTool_Tools implements INode {
         this.name = 'chainTool'
         this.type = 'ChainTool'
         this.icon = 'chaintool.svg'
-        this.category = 'Tools'
-        this.description = 'Use a chain as allowed tool for agent'
+        this.category = '工具'
+        this.description = '使用链作为代理的允许工具'
         this.baseClasses = [this.type, ...getBaseClasses(ChainTool)]
         this.inputs = [
             {

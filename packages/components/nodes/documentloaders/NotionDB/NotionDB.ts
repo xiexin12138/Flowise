@@ -17,8 +17,8 @@ class NotionDB_DocumentLoaders implements INode {
         this.name = 'notionDB'
         this.type = 'Document'
         this.icon = 'notion.png'
-        this.category = 'Document Loaders'
-        this.description = 'Load data from Notion Database ID'
+        this.category = '文档加载器'
+        this.description = '通过 Notion数据的 ID 加载数据'
         this.baseClasses = [this.type]
         this.inputs = [
             {

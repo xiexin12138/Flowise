@@ -21,13 +21,13 @@ class ConversationalAgent_Agents implements INode {
         this.label = 'Conversational Agent'
         this.name = 'conversationalAgent'
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '代理'
         this.icon = 'agent.svg'
-        this.description = 'Conversational agent for a chat model. It will utilize chat specific prompts'
+        this.description = '聊天模型的对话代理。它将利用特定于聊天的提示'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true

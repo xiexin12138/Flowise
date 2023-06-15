@@ -17,8 +17,8 @@ class ChatOpenAI_ChatModels implements INode {
         this.name = 'chatOpenAI'
         this.type = 'ChatOpenAI'
         this.icon = 'openai.png'
-        this.category = 'Chat Models'
-        this.description = 'Wrapper around OpenAI large language models that use the Chat endpoint'
+        this.category = '聊天模型'
+        this.description = '基于 OpenAI 大型语言模型的包装器，通过聊天界面使用'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
@@ -42,6 +42,10 @@ class ChatOpenAI_ChatModels implements INode {
                     {
                         label: 'gpt-4-32k-0314',
                         name: 'gpt-4-32k-0314'
+                    },
+                    {
+                        label: 'gpt-3.5-turbo-16k',
+                        name: 'gpt-3.5-turbo-16k'
                     },
                     {
                         label: 'gpt-3.5-turbo',

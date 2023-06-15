@@ -19,13 +19,13 @@ class AutoGPT_Agents implements INode {
         this.label = 'AutoGPT'
         this.name = 'autoGPT'
         this.type = 'AutoGPT'
-        this.category = 'Agents'
+        this.category = '代理'
         this.icon = 'autogpt.png'
-        this.description = 'Autonomous agent with chain of thoughts for self-guided task completion'
+        this.description = '具有自我引导任务完成的思想链的自主代理'
         this.baseClasses = ['AutoGPT']
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true

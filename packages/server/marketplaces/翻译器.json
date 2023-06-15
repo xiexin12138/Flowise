@@ -1,5 +1,5 @@
 {
-    "description": "使用带有聊天提示模板和聊天模型的LLM链进行语言翻译",
+    "description": "使用带有聊天提示词模板和聊天模型的LLM链进行语言翻译",
     "nodes": [
         {
             "width": 300,
@@ -17,7 +17,7 @@
                 "type": "ChatPromptTemplate",
                 "baseClasses": ["ChatPromptTemplate", "BaseChatPromptTemplate", "BasePromptTemplate"],
                 "category": "Prompts",
-                "description": "Schema to represent a chat prompt",
+                "description": "表示聊天提示的结构",
                 "inputParams": [
                     {
                         "label": "System Message",
@@ -87,7 +87,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -111,6 +111,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",
@@ -226,7 +230,7 @@
                 "type": "LLMChain",
                 "baseClasses": ["LLMChain", "BaseChain", "BaseLangChain"],
                 "category": "Chains",
-                "description": "Chain to run queries against LLMs",
+                "description": "用于对大语言模型运行查询的链",
                 "inputParams": [
                     {
                         "label": "Chain Name",

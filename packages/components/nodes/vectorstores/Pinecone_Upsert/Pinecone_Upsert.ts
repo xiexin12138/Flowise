@@ -22,8 +22,8 @@ class PineconeUpsert_VectorStores implements INode {
         this.name = 'pineconeUpsert'
         this.type = 'Pinecone'
         this.icon = 'pinecone.png'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to Pinecone'
+        this.category = '向量存储'
+        this.description = '将文档插值更新到Pinecone中。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
@@ -40,17 +40,20 @@ class PineconeUpsert_VectorStores implements INode {
             {
                 label: 'Pinecone Api Key',
                 name: 'pineconeApiKey',
-                type: 'password'
+                type: 'password',
+                default: process.env.PINECONE_API_KEY
             },
             {
                 label: 'Pinecone Environment',
                 name: 'pineconeEnv',
-                type: 'string'
+                type: 'string',
+                default: process.env.PINECONE_ENVIRONMENT
             },
             {
                 label: 'Pinecone Index',
                 name: 'pineconeIndex',
-                type: 'string'
+                type: 'string',
+                default: process.env.PINECONE_INDEX
             },
             {
                 label: 'Pinecone Namespace',
@@ -58,7 +61,8 @@ class PineconeUpsert_VectorStores implements INode {
                 type: 'string',
                 placeholder: 'my-first-namespace',
                 additionalParams: true,
-                optional: true
+                optional: true,
+                default: process.env.PINECONE_NAMESPACE
             },
             {
                 label: 'Top K',

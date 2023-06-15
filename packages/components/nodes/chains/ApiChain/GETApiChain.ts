@@ -30,8 +30,8 @@ class GETApiChain_Chains implements INode {
         this.name = 'getApiChain'
         this.type = 'GETApiChain'
         this.icon = 'apichain.svg'
-        this.category = 'Chains'
-        this.description = 'Chain to run queries against GET API'
+        this.category = '链'
+        this.description = '针对 GET API 运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [
             {

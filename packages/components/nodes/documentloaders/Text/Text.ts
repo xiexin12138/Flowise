@@ -17,8 +17,8 @@ class Text_DocumentLoaders implements INode {
         this.name = 'textFile'
         this.type = 'Document'
         this.icon = 'textFile.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from text files`
+        this.category = '文档加载器'
+        this.description = `从文本文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {

@@ -17,7 +17,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -41,6 +41,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",
@@ -156,7 +160,7 @@
                 "type": "BufferMemory",
                 "baseClasses": ["BufferMemory", "BaseChatMemory", "BaseMemory"],
                 "category": "Memory",
-                "description": "Remembers previous conversational back and forths directly",
+                "description": "直接记住之前的对话回合",
                 "inputParams": [
                     {
                         "label": "Memory Key",

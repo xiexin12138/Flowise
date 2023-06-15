@@ -46,7 +46,7 @@
                 ],
                 "inputAnchors": [
                     {
-                        "label": "Allowed Tools",
+                        "label": "允许的工具",
                         "name": "tools",
                         "type": "Tool",
                         "list": true,
@@ -107,7 +107,7 @@
                 "type": "ChatOpenAI",
                 "baseClasses": ["ChatOpenAI", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
                 "category": "Chat Models",
-                "description": "Wrapper around OpenAI large language models that use the Chat endpoint",
+                "description": "基于 OpenAI 大型语言模型的包装器，通过聊天界面使用",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -131,6 +131,10 @@
                             {
                                 "label": "gpt-4-32k-0314",
                                 "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-16k",
+                                "name": "gpt-3.5-turbo-16k"
                             },
                             {
                                 "label": "gpt-3.5-turbo",
@@ -246,7 +250,7 @@
                 "type": "WriteFile",
                 "baseClasses": ["WriteFile", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Write file to disk",
+                "description": "将文件写入磁盘",
                 "inputParams": [
                     {
                         "label": "Base Path",
@@ -295,7 +299,7 @@
                 "type": "ReadFile",
                 "baseClasses": ["ReadFile", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Read file from disk",
+                "description": "从磁盘读取文件",
                 "inputParams": [
                     {
                         "label": "Base Path",
@@ -344,7 +348,7 @@
                 "type": "SerpAPI",
                 "baseClasses": ["SerpAPI", "Tool", "StructuredTool", "BaseLangChain"],
                 "category": "Tools",
-                "description": "Wrapper around SerpAPI - a real-time API to access Google search results",
+                "description": "基于 SerpAPI 的包装器 - 一个用于访问Google搜索结果的实时API",
                 "inputParams": [
                     {
                         "label": "Serp Api 密钥",
@@ -389,7 +393,7 @@
                 "type": "OpenAIEmbeddings",
                 "baseClasses": ["OpenAIEmbeddings", "Embeddings"],
                 "category": "Embeddings",
-                "description": "OpenAI API to generate embeddings for a given text",
+                "description": "OpenAI API 用于为给定文本生成嵌入",
                 "inputParams": [
                     {
                         "label": "OpenAI Api 密钥",
@@ -465,12 +469,12 @@
             "type": "customNode",
             "data": {
                 "id": "pineconeExistingIndex_1",
-                "label": "Pinecone 加载现有索引",
+                "label": "Pinecone Load Existing Index",
                 "name": "pineconeExistingIndex",
                 "type": "Pinecone",
                 "baseClasses": ["Pinecone", "VectorStoreRetriever", "BaseRetriever"],
                 "category": "Vector Stores",
-                "description": "Load existing index from Pinecone (i.e: Document has been upserted)",
+                "description": "从松果加载现有索引（即：文档已经插值更新过）",
                 "inputParams": [
                     {
                         "label": "Pinecone Api 密钥",

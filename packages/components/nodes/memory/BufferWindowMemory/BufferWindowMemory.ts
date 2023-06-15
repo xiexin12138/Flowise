@@ -17,8 +17,8 @@ class BufferWindowMemory_Memory implements INode {
         this.name = 'bufferWindowMemory'
         this.type = 'BufferWindowMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
-        this.description = 'Uses a window of size k to surface the last k back-and-forths to use as memory'
+        this.category = '存储'
+        this.description = '使用大小为k的窗口，将最后k个来回对话提供给内部存储使用。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [
             {

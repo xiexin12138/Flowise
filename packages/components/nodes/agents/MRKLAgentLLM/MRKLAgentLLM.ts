@@ -19,13 +19,13 @@ class MRKLAgentLLM_Agents implements INode {
         this.label = 'MRKL Agent for LLMs'
         this.name = 'mrklAgentLLM'
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '代理'
         this.icon = 'agent.svg'
-        this.description = 'Agent that uses the ReAct Framework to decide what action to take, optimized to be used with LLMs'
+        this.description = '使用React框架来决定要采取什么操作的代理，优化为与大语言模型一起使用'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true

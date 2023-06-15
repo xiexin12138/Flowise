@@ -19,8 +19,8 @@ class VectorDBQAChain_Chains implements INode {
         this.name = 'vectorDBQAChain'
         this.type = 'VectorDBQAChain'
         this.icon = 'chain.svg'
-        this.category = 'Chains'
-        this.description = 'QA chain for vector databases'
+        this.category = '链'
+        this.description = '通过向量数据库回答问题。'
         this.baseClasses = [this.type, ...getBaseClasses(VectorDBQAChain)]
         this.inputs = [
             {

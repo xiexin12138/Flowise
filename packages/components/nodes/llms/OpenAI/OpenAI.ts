@@ -18,7 +18,7 @@ class OpenAI_LLMs implements INode {
         this.type = 'OpenAI'
         this.icon = 'openai.png'
         this.category = 'LLMs'
-        this.description = 'Wrapper around OpenAI large language models'
+        this.description = 'OpenAI 大语言模型。'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [
             {
